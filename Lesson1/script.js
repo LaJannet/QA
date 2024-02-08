@@ -70,6 +70,7 @@ var result13 = 3 ** (9 / 3);
 console.log(result13);
 
 //Результат: true
+//Логічне заперечення ! відбувається з права наліво
 //Перетворення строки в булеве значення (!!'false' дає нам true і !!'true'дає нам true, так як це рядки)
 var result14 = !!'false' == !!'true';
 console.log(result14);
