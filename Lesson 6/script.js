@@ -1,21 +1,16 @@
 const findValueByKey = (object, companyName) => {
     if (object.name === companyName) {
         return object;
-    } else if (object.clients) {
-        for (let client of object.clients) {
-            let foundClient = findValueByKey(client, companyName);
-            if (foundClient) {
-                return foundClient;
+    } else {
+        for (const key in object) {
+            if (typeof object[key] === 'object') {
+                let found = findValueByKey(object[key], companyName);
+                if (found) {
+                    return found;
+                }
             }
         }
-    } else if (object.partners) {
-        for (let partner of object.partners) {
-            let foundPartner = findValueByKey(partner, companyName);
-            if (foundPartner) {
-                return foundPartner;
-            }
-        }
-    }    
+    }
 };
 
 const company = {
@@ -61,5 +56,5 @@ const company = {
     ]
 };
 
-const result = findValueByKey(company, 'Клієнт 1.2.3');
+const result = findValueByKey(company, 'Клієнт 1.2');
 console.log(result);
