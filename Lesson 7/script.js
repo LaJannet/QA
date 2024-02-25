@@ -16,7 +16,7 @@ var arr = [
     },
 ];
 
-var re = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)?(@gmail|@yahoo).com$/;
+var re = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)?(@gmail|@yahoo)\.com$/;
 var res = arr.filter(item => re.test(item.email));
 
 console.log("The main array =");
