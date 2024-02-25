@@ -2,7 +2,7 @@ var arr = [
     {
         userName:"Test",
         lastName:"Test",
-        email:"test.test@gmail.com"
+        email:"test@gmail.com"
     },
     {
         userName:"Dmitro",
@@ -17,7 +17,7 @@ var arr = [
 ];
 
 var re = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)?(@gmail|@yahoo)\.com$/;
-var res = arr.filter(item => re.test(item.email));
+var res = arr.filter(item => re.test(item.email)).map(item => item.email);
 
 console.log("The main array =");
 console.log(arr);
